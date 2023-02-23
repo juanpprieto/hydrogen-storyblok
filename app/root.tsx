@@ -16,7 +16,7 @@ import type {Shop} from '@shopify/hydrogen/storefront-api-types';
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {apiPlugin, storyblokInit} from '@storyblok/react';
-import {components} from '~/components';
+import {components, Layout} from '~/components';
 import {StoryblokComponent, useStoryblokState} from '@storyblok/react';
 
 storyblokInit({
@@ -48,18 +48,19 @@ export const meta: MetaFunction = () => ({
 
 export async function loader({context}: LoaderArgs) {
   const layout = await context.storefront.query<{shop: Shop}>(LAYOUT_QUERY);
-  let cms = await context.storyblok.get(`cdn/stories/global/header`, {
+  // TODO: https://github.com/storyblok/storyblok-js-client
+  let cms = await context.storyblok.get(`cdn/stories`, {
     version: 'draft',
+    starts_with: 'global/',
   });
 
-  const story = cms?.data?.story || null;
-  return json({story, layout});
+  const stories = cms?.data?.stories || null;
+  return json({stories, layout});
 }
 
 export default function App() {
-  let {story} = useLoaderData<typeof loader>();
-  story = useStoryblokState(story);
-  console.log(story);
+  let {stories} = useLoaderData<typeof loader>();
+  stories = useStoryblokState(stories);
   return (
     <html lang="en">
       <head>
@@ -67,8 +68,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <StoryblokComponent blok={story.content} />
-        <Outlet />
+        <Layout stories={stories} />
         <ScrollRestoration />
         <Scripts />
       </body>
