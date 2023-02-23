@@ -67,7 +67,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{padding: 0}}>
         <Layout stories={stories} />
         <ScrollRestoration />
         <Scripts />
