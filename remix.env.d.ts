@@ -22,6 +22,7 @@ declare global {
     PUBLIC_STORE_DOMAIN: string;
     PUBLIC_STOREFRONT_ID: string;
     PUBLIC_STORYBLOK_TOKEN: string;
+    PRIVATE_SHOPIFY_WEBHOOK_SECRET: string;
   }
 }
 
