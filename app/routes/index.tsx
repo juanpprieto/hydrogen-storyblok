@@ -15,5 +15,5 @@ export async function loader({context}: LoaderArgs) {
 export default function Homepage() {
   let {story} = useLoaderData<typeof loader>();
   story = useStoryblokState(story);
-  return <StoryblokComponent blok={story.content} />;
+  return <StoryblokComponent blok={story?.content} />;
 }

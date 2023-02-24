@@ -18,7 +18,7 @@ export default function PageTemplate() {
   return (
     <>
       <h1>Page: {handle}</h1>
-      <StoryblokComponent blok={story.content} />
+      <StoryblokComponent blok={story?.content} />
     </>
   );
 }
