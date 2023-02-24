@@ -14,7 +14,6 @@ export async function loader({context, params}: LoaderArgs) {
 export default function PageTemplate() {
   let {story, handle} = useLoaderData<typeof loader>();
   story = useStoryblokState(story);
-  console.log({story});
   return (
     <>
       <h1>Page: {handle}</h1>
