@@ -7,7 +7,6 @@ import {
 import {
   Links,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
   useLoaderData,
@@ -19,11 +18,17 @@ import {apiPlugin, storyblokInit} from '@storyblok/react';
 import {components, Layout} from '~/components';
 import {StoryblokComponent, useStoryblokState} from '@storyblok/react';
 
+const shouldUseBridge =
+  typeof window !== 'undefined'
+    ? window.location !== window.parent.location
+    : false;
+
 storyblokInit({
   accessToken: 'aGv10h9fQIdYKaF0JifCRgtt',
   apiOptions: {region: 'us'},
   use: [apiPlugin],
   components,
+  bridge: shouldUseBridge,
 });
 
 export const links: LinksFunction = () => {
