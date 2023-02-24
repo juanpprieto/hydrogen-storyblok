@@ -59,6 +59,8 @@ export async function loader({context}: LoaderArgs) {
     starts_with: 'global/',
   });
 
+  console.log('root cms', cms);
+
   const stories = cms?.data?.stories || null;
   return json({stories, layout});
 }
