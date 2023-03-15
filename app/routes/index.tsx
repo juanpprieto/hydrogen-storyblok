@@ -3,8 +3,8 @@ import {useLoaderData} from '@remix-run/react';
 import {StoryblokComponent, useStoryblokState} from '@storyblok/react';
 
 export async function loader({context}: LoaderArgs) {
-  let slug = 'home';
-  let cms = await context.storyblok.get(`cdn/stories/${slug}`, {
+  const slug = 'home';
+  const cms = await context.storyblok.get(`cdn/stories/${slug}`, {
     version: 'draft',
   });
 

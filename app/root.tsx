@@ -16,13 +16,17 @@ import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {apiPlugin, storyblokInit} from '@storyblok/react';
 import {components, Layout} from '~/components';
-import {StoryblokComponent, useStoryblokState} from '@storyblok/react';
+import {useStoryblokState} from '@storyblok/react';
 
 const shouldUseBridge =
   typeof window !== 'undefined'
     ? window.location !== window.parent.location
     : false;
 
+// Initiating the client is a little funky. I tried to do it at server.ts but it seems to
+// not like being initiated in the server realm. This means I also had to hardcode the
+// public access token because .env variables are not available outside exported remix
+// functions
 storyblokInit({
   accessToken: 'aGv10h9fQIdYKaF0JifCRgtt',
   apiOptions: {region: 'us'},
@@ -53,13 +57,10 @@ export const meta: MetaFunction = () => ({
 
 export async function loader({context}: LoaderArgs) {
   const layout = await context.storefront.query<{shop: Shop}>(LAYOUT_QUERY);
-  // TODO: https://github.com/storyblok/storyblok-js-client
-  let cms = await context.storyblok.get(`cdn/stories`, {
+  const cms = await context.storyblok.get(`cdn/stories`, {
     version: 'draft',
     starts_with: 'global/',
   });
-
-  console.log('root cms', cms);
 
   const stories = cms?.data?.stories || null;
   return json({stories, layout});

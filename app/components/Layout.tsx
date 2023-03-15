@@ -1,6 +1,6 @@
-import {StoryblokComponent} from '@storyblok/react';
+import {StoryblokComponent, type ISbStoryData} from '@storyblok/react';
 
-export function Layout({stories}: {stories: any}) {
+export function Layout({stories}: {stories: ISbStoryData[]}) {
   return (
     <>
       {stories?.map((story) => (

@@ -1,13 +1,18 @@
 import {json, LoaderArgs, redirect} from '@shopify/remix-oxygen';
 
-export async function loader({context, params}: LoaderArgs) {
+export async function loader() {
   return redirect('/');
 }
 
-export async function action({context, params, request}: LoaderArgs) {
+// Experiment not in use.
+// This api enpoint aims to receive product/collection webhooks from Shopify and then
+// process them in order to create/update/delete product and collection page entries
+// in Storyblok via the managment API. This is a work in progress.
+// Sadly, there is currently a limitation with Shopify's webhooks adming that prevents
+// us from using a Hydrogen API route url as a target for a webhook notification.
+export async function action({context, request}: LoaderArgs) {
   const env = context.env;
   const headers = request.headers;
-  const topic = headers.get('x-shopify-topic');
   const shop = headers.get('x-shopify-shop-domain');
 
   if (env.PUBLIC_STORE_DOMAIN !== shop) {
@@ -42,9 +47,6 @@ async function verifySignature(request: Request, secret: string) {
     )
     .then((signature) => new Uint8Array(signature))
     .then((bytes) => btoa(String.fromCharCode(...bytes)));
-
-  console.log('computedHmac', computedHmac);
-  console.log('hmac', hmac);
 
   if (computedHmac !== hmac) {
     return false;

@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "hydrogen-oxygen-storyblok",
   "private": true,
   "sideEffects": false,
   "version": "0.0.0",
@@ -11,7 +11,8 @@
     "preview": "npm run build && shopify hydrogen preview",
     "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
     "typecheck": "tsc --noEmit",
-    "g": "shopify hydrogen generate"
+    "gen-storyblok-types": "storyblok-generate-ts source=./components.1005617.json target=./component-types-sb",
+    "gen": "shopify hydrogen generate"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
@@ -36,6 +37,7 @@
     "eslint": "^8.20.0",
     "eslint-plugin-hydrogen": "0.12.2",
     "prettier": "^2.8.4",
+    "storyblok-generate-ts": "^1.13.1",
     "typescript": "^4.9.5"
   },
   "engines": {

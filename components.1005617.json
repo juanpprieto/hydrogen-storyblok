@@ -1,0 +1,290 @@
+{
+  "components": [
+    {
+      "name": "feature",
+      "display_name": null,
+      "created_at": "2023-02-22T20:06:11.938Z",
+      "updated_at": "2023-02-22T20:06:11.938Z",
+      "id": 32575,
+      "schema": {
+        "name": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "feature",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "grid",
+      "display_name": null,
+      "created_at": "2023-02-22T20:06:11.927Z",
+      "updated_at": "2023-02-22T20:06:11.927Z",
+      "id": 32574,
+      "schema": {
+        "columns": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "grid",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "header",
+      "display_name": "Header",
+      "created_at": "2023-02-23T04:12:52.635Z",
+      "updated_at": "2023-02-23T06:14:53.360Z",
+      "id": 32691,
+      "schema": {
+        "menu": {
+          "type": "bloks",
+          "display_name": "Menu",
+          "restrict_type": "",
+          "restrict_components": true,
+          "description": "Desktop menu",
+          "tooltip": true,
+          "required": true,
+          "component_whitelist": [
+            "menuItem"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Header",
+      "component_group_uuid": "8599f28a-102a-457f-a314-1c529b46a173",
+      "color": null,
+      "icon": "block-block",
+      "component_group_name": "header"
+    },
+    {
+      "name": "main",
+      "display_name": null,
+      "created_at": "2023-02-23T20:20:38.342Z",
+      "updated_at": "2023-02-23T20:22:08.709Z",
+      "id": 32901,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "main",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "menuItem",
+      "display_name": null,
+      "created_at": "2023-02-23T04:16:17.140Z",
+      "updated_at": "2023-02-23T06:46:55.854Z",
+      "id": 32692,
+      "schema": {
+        "Text": {
+          "type": "text",
+          "required": true
+        },
+        "link": {
+          "type": "multilink",
+          "required": true,
+          "show_anchor": true,
+          "restrict_content_types": false,
+          "component_whitelist": []
+        },
+        "image": {
+          "type": "asset",
+          "display_name": "Image",
+          "allow_external_url": true,
+          "filetypes": [
+            "images"
+          ]
+        },
+        "subMenuItem": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "menuItem"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "menuItem",
+      "component_group_uuid": "8599f28a-102a-457f-a314-1c529b46a173",
+      "color": null,
+      "icon": null,
+      "component_group_name": "header"
+    },
+    {
+      "name": "page",
+      "display_name": "Page",
+      "created_at": "2023-02-22T20:06:11.904Z",
+      "updated_at": "2023-02-25T06:40:51.237Z",
+      "id": 32572,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "required": false,
+          "display_name": "Sections",
+          "pos": 1
+        },
+        "tab-45b6f418-e92e-4215-9419-766c901d2655": {
+          "display_name": "SEO",
+          "keys": [
+            "Title",
+            "Description"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "Title": {
+          "type": "text"
+        },
+        "Description": {
+          "type": "textarea",
+          "max_length": 120
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-1-2block"
+    },
+    {
+      "name": "product",
+      "display_name": "Product",
+      "created_at": "2023-02-23T21:38:38.946Z",
+      "updated_at": "2023-02-25T17:41:08.164Z",
+      "id": 32922,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "pos": 0,
+          "allow_external_url": true,
+          "filetypes": [
+            "images"
+          ]
+        },
+        "body": {
+          "type": "bloks",
+          "required": false,
+          "display_name": "Sections",
+          "pos": 1
+        },
+        "shopifyId": {
+          "type": "text",
+          "pos": 2
+        },
+        "tab-cbdc8991-0f30-473d-a608-186d7e3ee2e5": {
+          "display_name": "Shopify",
+          "keys": [
+            "shopifyId",
+            "image"
+          ],
+          "pos": 3,
+          "type": "tab"
+        },
+        "tab-45b6f418-e92e-4215-9419-766c901d2655": {
+          "display_name": "SEO",
+          "keys": [
+            "Title",
+            "Description"
+          ],
+          "pos": 4,
+          "type": "tab"
+        },
+        "Title": {
+          "type": "text",
+          "pos": 5
+        },
+        "Description": {
+          "type": "textarea",
+          "max_length": 120,
+          "pos": 6
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Product",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-cart"
+    },
+    {
+      "name": "teaser",
+      "display_name": null,
+      "created_at": "2023-02-22T20:06:11.915Z",
+      "updated_at": "2023-03-06T22:02:26.869Z",
+      "id": 32573,
+      "schema": {
+        "headline": {
+          "type": "text"
+        },
+        "description": {
+          "type": "markdown",
+          "display_name": "Description"
+        },
+        "link": {
+          "type": "multilink"
+        },
+        "blocks": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "teaser",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}

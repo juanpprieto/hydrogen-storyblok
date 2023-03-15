@@ -1,9 +1,11 @@
 /// <reference types="@remix-run/dev" />
 /// <reference types="@shopify/remix-oxygen" />
 /// <reference types="@shopify/oxygen-workers-types" />
+/// <reference types="./component-types-sb.d.ts" />
 
 import type {Storefront} from '@shopify/hydrogen';
 import type {HydrogenSession} from '../server';
+import {type StoryblokClient} from '@storyblok/react';
 
 declare global {
   /**
@@ -33,6 +35,7 @@ declare module '@shopify/remix-oxygen' {
   export interface AppLoadContext {
     session: HydrogenSession;
     storefront: Storefront;
+    storyblok: StoryblokClient;
     env: Env;
   }
 }
