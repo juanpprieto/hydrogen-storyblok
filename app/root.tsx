@@ -15,7 +15,8 @@ import type {Shop} from '@shopify/hydrogen/storefront-api-types';
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {apiPlugin, storyblokInit} from '@storyblok/react';
-import {components, Layout} from '~/components';
+import {Layout} from '~/components';
+import {bloks} from '~/bloks';
 import {useStoryblokState} from '@storyblok/react';
 
 const shouldUseBridge =
@@ -31,7 +32,7 @@ storyblokInit({
   accessToken: 'aGv10h9fQIdYKaF0JifCRgtt',
   apiOptions: {region: 'us'},
   use: [apiPlugin],
-  components,
+  components: bloks,
   bridge: shouldUseBridge,
 });
 
