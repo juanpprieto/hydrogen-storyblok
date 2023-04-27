@@ -5,9 +5,9 @@
   "version": "0.0.0",
   "scripts": {
     "build": "shopify hydrogen build",
-    "dev": "shopify hydrogen dev --port 3000",
+    "dev": "shopify hydrogen dev --port 3333",
     "cert": "mkcert localhost",
-    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "proxy": "local-ssl-proxy --source 3010 --target 3333 --cert localhost.pem --key localhost-key.pem",
     "preview": "npm run build && shopify hydrogen preview",
     "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
     "typecheck": "tsc --noEmit",

@@ -4,8 +4,9 @@ import {FeatureStoryblok} from '../../component-types-sb';
 export function Feature({blok}: FeatureStoryblok) {
   return (
     <div {...storyblokEditable(blok)}>
-      <h2>{blok.name}</h2>
-      <p>{JSON.stringify(blok.description)}</p>
+      <h2>Feature Section</h2>
+      <p>Name: {blok.name}</p>
+      {/* <pre>{JSON.stringify(blok, null, 2)}</pre> */}
     </div>
   );
 }

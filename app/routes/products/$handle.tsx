@@ -3,7 +3,7 @@ import {useLoaderData} from '@remix-run/react';
 import {StoryblokComponent, useStoryblokState} from '@storyblok/react';
 
 export async function loader({context, params}: LoaderArgs) {
-  let cms = await context.storyblok.get(
+  const cms = await context.storyblok.get(
     `cdn/stories/products/${params.handle}`,
     {
       version: 'draft',
@@ -17,9 +17,11 @@ export async function loader({context, params}: LoaderArgs) {
 export default function ProductTemplate() {
   let {story, handle} = useLoaderData<typeof loader>();
   story = useStoryblokState(story);
+
+  console.log({story});
   return (
     <>
-      <h1>Product: {handle}</h1>
+      {/* <h1>Product: {handle}</h1> */}
       <StoryblokComponent blok={story?.content} />
     </>
   );
